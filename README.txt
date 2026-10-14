@@ -15,3 +15,5 @@ Skala: 0–19 F CUBA LAGI; 20–34 E TINGKATKAN USAHA; 35–49 D TERUS BERUSAHA;
 Muat naik index.html dan README.txt ke root repository GitHub Pages. Pastikan branch/folder Pages betul. Jawapan bertulis dinilai automatik menggunakan kata kunci asas dan wajar disemak guru.
 
 Kemaskini: Paksi Bumi dalam kedua-dua simulator ditunjukkan condong 23.5 darjah, dengan label U dan S pada hujung paksi.
+
+Kemaskini terkini: Sudut paksi ditetapkan kepada -23.5 darjah pada kedua-dua simulator; ciri lain dikekalkan.
