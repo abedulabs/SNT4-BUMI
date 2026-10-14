@@ -17,3 +17,9 @@ Muat naik index.html dan README.txt ke root repository GitHub Pages. Pastikan br
 Kemaskini: Paksi Bumi dalam kedua-dua simulator ditunjukkan condong 23.5 darjah, dengan label U dan S pada hujung paksi.
 
 Kemaskini terkini: Sudut paksi ditetapkan kepada -23.5 darjah pada kedua-dua simulator; ciri lain dikekalkan.
+
+Kemaskini arah kecondongan: paksi Bumi kini condong 23.5 darjah ke arah timur (hujung Utara condong ke kanan dalam paparan), pada kedua-dua simulator.
+
+Kemaskini visual: sudut kecondongan paksi kekal 23.5 darjah ke arah timur, tetapi tulisan darjah dan lengkok/garisan penanda sudut berwarna kuning dibuang pada kedua-dua simulator.
+
+Kemaskini terkini: sudut paksi 23.5 darjah dikekalkan tetapi label sudut dan bulatan/garisan kuning dibuang. Bahagian Semak Kefahaman Simulator dipindahkan ke atas bahagian Interaksi Murid; butang Simpan Markah kekal di bahagian bawah Interaksi Murid.
