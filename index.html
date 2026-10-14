@@ -1,125 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sains Tahun 4 — Bumi</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sains Tahun 4 | Bumi</title>
 <style>
-:root{--navy:#07152f;--panel:#10264a;--line:#2b4773;--cyan:#62e4ff;--gold:#ffd36b;--white:#f4f8ff}
-*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(circle at 50% 0,#17396b,#07152f 58%);color:var(--white);min-height:100vh}
-header{padding:22px 18px 12px;text-align:center} .eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-h1{margin:5px 0;font-size:clamp(1.7rem,4vw,2.6rem)} header p{margin:5px auto;color:#c8d8f1;max-width:760px}
-main{max-width:1120px;margin:auto;padding:12px;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.9fr);gap:14px}
-.panel{background:linear-gradient(160deg,rgba(20,44,81,.96),rgba(8,23,48,.97));border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 36px #0003}
-.panel h2{font-size:1.05rem;margin:0;padding:15px 17px;border-bottom:1px solid #29436a}
-.scene{position:relative;padding:8px;background:linear-gradient(180deg,#08132b,#0c1f40)}canvas{display:block;width:100%;height:auto;aspect-ratio:1.45/1}
-.controls{padding:14px 16px;display:flex;gap:9px;flex-wrap:wrap;align-items:center}
-button{border:1px solid #4c6d9d;border-radius:12px;padding:10px 14px;background:#173963;color:white;font-weight:750;cursor:pointer}
-button.primary{background:linear-gradient(135deg,#00a9d4,#1764b4);border-color:#58d9ff}button:hover{filter:brightness(1.13)}
-.speed{display:flex;align-items:center;gap:8px;flex:1;min-width:180px;color:#cbd9ee;font-size:.9rem}input[type=range]{width:100%;accent-color:#55dfff}
-.note{padding:0 16px 16px;color:#b9cce7;font-size:.88rem;line-height:1.5}
-.info{padding:15px 16px;line-height:1.55;color:#d8e5f8}.fact{border:1px solid #2c4b77;background:#0a1b36;border-radius:13px;padding:12px;margin:9px 0}.fact b{color:var(--cyan)}
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.pill{border-radius:999px;background:#1b3d65;padding:5px 10px;font-size:.78rem;color:#d9efff}
-.quiz{padding:15px 16px}.quiz p{margin-top:0}.answers{display:grid;gap:8px}.answers button{text-align:left;background:#102b50}.answers button.correct{border-color:#55d99b;background:#104b45}.answers button.wrong{border-color:#ff8d8d;background:#542b39}.feedback{min-height:26px;margin-top:10px;color:#c8d8f1;font-weight:700}
-footer{text-align:center;color:#8fa8ce;font-size:.78rem;padding:18px}
-@media(max-width:760px){main{grid-template-columns:1fr}canvas{aspect-ratio:1/1}}
+:root{--bg:#07152e;--panel:#10294d;--line:#31537e;--cyan:#5ce1ff;--gold:#ffd45f;--text:#f4f8ff;--muted:#c0d3ed}
+*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(ellipse at top,#173d70,#07152e 70%);min-height:100vh}
+header{text-align:center;padding:22px 14px 14px}header .tag{font-size:.76rem;letter-spacing:.15em;color:var(--cyan);font-weight:800}h1{margin:6px 0;font-size:clamp(1.6rem,4vw,2.6rem)}header p{margin:0 auto;max-width:800px;color:var(--muted)}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:7px;padding:10px;overflow-x:auto;background:#07152eef;border-block:1px solid #27476f}
+nav button{white-space:nowrap;border:1px solid #3a5a84;background:#10294d;color:white;padding:10px 14px;border-radius:12px;font-weight:750}nav button.active{background:#087ba6;border-color:#64e7ff}
+main{max-width:1180px;margin:auto;padding:14px}.tab{display:none}.tab.active{display:block}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.8fr);gap:14px}
+.card{border:1px solid var(--line);background:linear-gradient(145deg,#122e54,#091b36);border-radius:18px;overflow:hidden;margin-bottom:14px}.card h2{font-size:1.05rem;margin:0;padding:14px 16px;border-bottom:1px solid #29486f}.body{padding:15px;line-height:1.55;color:#dbe8fa}
+canvas{display:block;width:100%;height:auto;background:#07152e}.controls{display:flex;gap:8px;flex-wrap:wrap;padding:12px}.controls button,.btn{border:1px solid #4a6b97;border-radius:11px;background:#173b65;color:white;padding:10px 13px;font-weight:750;cursor:pointer}.controls .primary,.btn.primary{background:linear-gradient(120deg,#008fb8,#155fc0);border-color:#61dcff}.controls label{display:flex;align-items:center;gap:7px;min-width:180px;flex:1;font-size:.9rem}.controls input{width:100%;accent-color:#5ce1ff}
+.stat{display:inline-block;border-radius:999px;background:#1a416a;padding:5px 10px;font-size:.8rem;margin:3px}.callout{border:1px solid #315780;background:#091d39;border-radius:12px;padding:11px;margin:8px 0}.callout b{color:var(--cyan)}.small{font-size:.88rem;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.qrow{padding:14px 0;border-bottom:1px solid #294568}.qrow:last-child{border-bottom:0}.qtitle{font-weight:750;margin-bottom:8px}.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.opts label{display:flex;gap:8px;align-items:flex-start;background:#0a1d39;border:1px solid #2e4e77;padding:9px;border-radius:10px;cursor:pointer}.opts input{margin-top:5px;accent-color:#50d9ff}.textanswer{width:100%;background:#06162e;color:white;border:1px solid #41638d;border-radius:10px;padding:10px;min-height:75px;font:inherit}.result{font-weight:800;margin-top:12px}.good{color:#7ff0b4}.bad{color:#ffb6b6}.gradebox{text-align:center;padding:24px}.grade{font-size:3.5rem;font-weight:900;color:var(--gold)}.score{font-size:1.3rem;font-weight:800}.hidden{display:none!important}
+#popup{position:fixed;inset:0;background:#000a;z-index:20;display:none;align-items:center;justify-content:center;padding:16px}#popup.show{display:flex}.modal{width:min(520px,100%);background:linear-gradient(145deg,#15365f,#071a34);border:1px solid #5ce1ff;border-radius:20px;padding:24px;text-align:center;box-shadow:0 20px 70px #0009}.modal .emoji{font-size:3rem}.modal h2{margin:8px 0;color:#ffe080}.modal p{color:#d7e7fb}.modal button{background:#087ba6;color:white;border:0;border-radius:10px;padding:11px 20px;font-weight:800}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.opts{grid-template-columns:1fr}nav{top:0}}
+@media print{body{background:white;color:#111}nav,header,.no-print{display:none!important}.tab{display:none!important}#tab-slip{display:block!important}.card{background:white;color:#111;border:1px solid #999}.body{color:#111}.grade{color:#111}}
 </style>
 </head>
 <body>
-<header><div class="eyebrow">Modul Pembelajaran Interaktif • KSSR</div><h1>🌍 Bumi: Putaran pada Paksi</h1><p>Sains Tahun 4 — Perhatikan bagaimana Bumi berputar dari barat ke timur dan bagaimana cahaya Matahari menghasilkan siang dan malam.</p></header>
+<header><div class="tag">PEMBELAJARAN DIGITAL • KSSR</div><h1>🌍 SAINS TAHUN 4: BUMI</h1><p>Teroka putaran Bumi pada paksinya, peredaran Bumi mengelilingi Matahari, kuiz dan pemerhatian.</p></header>
+<nav id="nav">
+<button class="active" data-tab="sim">1. Simulator Bumi</button><button data-tab="quiz">2. Kuiz (21 markah)</button><button data-tab="obs">3. Pemerhatian (20 markah)</button><button data-tab="slip">4. Slip Pencapaian</button>
+</nav>
 <main>
-<section class="panel">
-<h2>Simulasi Bumi dari Pandangan Sisi</h2>
-<div class="scene"><canvas id="space" width="900" height="620" aria-label="Simulasi Bumi dan Matahari"></canvas></div>
-<div class="controls">
-<button id="toggle" class="primary">❚❚ Jeda</button><button id="reset">↺ Mula semula</button>
-<label class="speed">Kelajuan putaran <input id="speed" type="range" min="1" max="5" value="2"><span id="speedVal">2×</span></label>
+<section id="tab-sim" class="tab active">
+<div class="layout">
+<div>
+<div class="card"><h2>A. Putaran Bumi pada Paksinya</h2><canvas id="spin" width="900" height="520"></canvas><div class="controls"><button class="primary" id="spinToggle">❚❚ Jeda</button><button id="spinReset">↺ Reset</button><label>Kelajuan <input id="spinSpeed" type="range" min="1" max="5" value="2"><span id="spinSpeedText">2×</span></label></div><div class="body small">Perhatikan Bumi berputar pada paksi dari <b>barat ke timur</b>. Label U berada di atas dan S di bawah. Bahagian yang menghadap Matahari mengalami siang.</div></div>
+<div class="card"><h2>B. Peredaran Bumi Mengelilingi Matahari</h2><canvas id="orbit" width="900" height="520"></canvas><div class="controls"><button class="primary" id="orbitToggle">❚❚ Jeda</button><button id="orbitReset">↺ Reset</button><label>Kelajuan orbit <input id="orbitSpeed" type="range" min="1" max="5" value="2"><span id="orbitSpeedText">2×</span></label></div><div class="body small">Bumi bergerak mengelilingi Matahari pada orbitnya. Satu peredaran lengkap mengambil kira-kira <b>365¼ hari</b>. Anak panah menunjukkan arah peredaran dalam model.</div></div>
 </div>
-<div class="note">Petunjuk: cahaya datang dari Matahari di sebelah kiri. Bahagian Bumi yang menghadap Matahari mengalami siang; bahagian yang membelakangi Matahari mengalami malam. Bumi berputar pada paksinya dari <b>barat ke timur</b>.</div>
+<div>
+<div class="card"><h2>Interaksi Murid</h2><div class="body"><p>Gunakan kawalan simulasi dan perhatikan:</p><div class="callout"><b>Putaran</b><br>Adakah Bumi berpusing pada paksi? Ke arah manakah putarannya?</div><div class="callout"><b>Peredaran</b><br>Adakah kedudukan Bumi berubah ketika mengelilingi Matahari?</div><p class="small">Tandakan pemerhatian selepas mencuba kedua-dua simulator.</p><label><input type="checkbox" id="seenSpin"> Saya telah mencuba simulator putaran.</label><br><label><input type="checkbox" id="seenOrbit"> Saya telah mencuba simulator peredaran.</label><div class="actions"><button class="btn primary" id="completeSim">Simpan Markah Simulator</button></div><div id="simResult" class="result">Markah simulator: 0/9</div><p class="small">Markah simulator diberi apabila murid mencuba kedua-dua simulator dan menjawab tiga soalan ringkas dengan betul (3 markah setiap satu).</p></div></div>
+<div class="card"><h2>Semak Kefahaman Simulator</h2><div class="body" id="simQuestions">
+<div class="qrow"><div class="qtitle">1. Bumi berputar pada…</div><div class="opts"><label><input type="radio" name="s1" value="a"> orbit Matahari</label><label><input type="radio" name="s1" value="b"> paksinya</label></div></div>
+<div class="qrow"><div class="qtitle">2. Arah putaran Bumi ialah…</div><div class="opts"><label><input type="radio" name="s2" value="a"> barat ke timur</label><label><input type="radio" name="s2" value="b"> timur ke barat</label></div></div>
+<div class="qrow"><div class="qtitle">3. Bumi beredar mengelilingi…</div><div class="opts"><label><input type="radio" name="s3" value="a"> Bulan</label><label><input type="radio" name="s3" value="b"> Matahari</label></div></div>
+<div class="small">Pilih jawapan: 1-B, 2-A, 3-B.</div></div></div>
+</div></div>
 </section>
-<aside class="panel">
-<h2>Teroka dan Fahami</h2>
-<div class="info">
-<div class="fact"><b>1. Paksi Bumi</b><br>Garis bayangan yang melalui Kutub Utara (U) dan Kutub Selatan (S). Bumi berputar pada paksi ini.</div>
-<div class="fact"><b>2. Arah putaran</b><br>Bumi berputar dari barat ke timur. Dalam paparan ini, arah gerakan ditunjukkan dari kiri ke kanan.</div>
-<div class="fact"><b>3. Siang dan malam</b><br>Bumi menerima cahaya Matahari pada satu bahagian sahaja pada satu-satu masa. Putaran Bumi menyebabkan sesuatu kawasan bergilir-gilir mengalami siang dan malam.</div>
-<div class="pills"><span class="pill">Matahari: sumber cahaya</span><span class="pill">1 putaran ≈ 24 jam</span></div>
-</div>
-<div class="quiz">
-<h2 style="padding:0 0 12px;border:0">Uji Kefahaman</h2>
-<p>Apakah arah putaran Bumi pada paksinya?</p>
-<div class="answers">
-<button data-answer="wrong">A. Dari timur ke barat</button>
-<button data-answer="correct">B. Dari barat ke timur</button>
-<button data-answer="wrong">C. Dari utara ke selatan sahaja</button>
-</div>
-<div class="feedback" id="feedback" role="status"></div>
-</div>
-</aside>
+<section id="tab-quiz" class="tab"><div class="card"><h2>Kuiz Objektif — 21 Soalan (21 markah)</h2><div class="body"><p>Setiap soalan bernilai 1 markah. Pilih satu jawapan A, B, C atau D bagi setiap soalan.</p><form id="quizForm"><div id="quizQuestions"></div><button class="btn primary" type="submit">Semak Kuiz</button><button class="btn" type="button" id="clearQuiz">Kosongkan Jawapan</button><div id="quizResult" class="result"></div></form></div></div></section>
+<section id="tab-obs" class="tab"><div class="card"><h2>Pemerhatian — 20 markah</h2><div class="body"><p><b>Bahagian A:</b> 5 soalan objektif (5 markah). <b>Bahagian B:</b> 3 soalan penyataan bertulis (15 markah, 5 markah setiap satu).</p><form id="obsForm"><div id="obsQuestions"></div><h3>Bahagian B — Jawapan Bertulis</h3><div id="writtenQuestions"></div><button class="btn primary" type="submit">Semak Pemerhatian</button><button class="btn" type="button" id="clearObs">Kosongkan Jawapan</button><div id="obsResult" class="result"></div><p class="small">Jawapan bertulis dinilai automatik berdasarkan kata kunci asas. Guru boleh menyemak semula jawapan murid.</p></form></div></div></section>
+<section id="tab-slip" class="tab"><div class="card"><h2>Slip Pencapaian Murid</h2><div class="body"><div class="no-print"><label>Nama murid <input id="studentName" placeholder="Taip nama murid" style="width:100%;margin:6px 0 12px;padding:11px;border-radius:9px;border:1px solid #41638d;background:#06162e;color:white"></label><label>Kelas <input id="studentClass" placeholder="Contoh: 4 Bestari" style="width:100%;margin:6px 0 12px;padding:11px;border-radius:9px;border:1px solid #41638d;background:#06162e;color:white"></label><button class="btn primary" id="makeSlip">Jana Slip Pencapaian</button> <button class="btn" id="printSlip">Cetak / Simpan PDF</button></div><div id="slipContent" class="gradebox"><p>Lengkapkan simulator, kuiz dan pemerhatian, kemudian jana slip.</p></div></div></div></section>
 </main>
-<footer>Bahan pembelajaran digital • Sains Tahun 4 • Fail kendiri — semua grafik dilukis dalam fail ini, tiada folder aset berasingan.</footer>
+<div id="popup"><div class="modal"><div class="emoji" id="popEmoji">🎉</div><h2 id="popTitle">Tahniah!</h2><p id="popText"></p><button id="popClose">Teruskan</button></div></div>
 <script>
-const canvas=document.getElementById('space'),ctx=canvas.getContext('2d');
-const toggle=document.getElementById('toggle'),reset=document.getElementById('reset'),speed=document.getElementById('speed'),speedVal=document.getElementById('speedVal');
-let running=true, angle=0, last=0;
-const stars=Array.from({length:115},(_,i)=>({x:((i*137)%997)/997,y:((i*271)%991)/991,r:.6+((i*7)%13)/10,a:.25+((i*3)%7)/10}));
-function roundedRect(x,y,w,h,r,fill){ctx.fillStyle=fill;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
-function draw(t){
- const w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);
- const bg=ctx.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#07132b');bg.addColorStop(1,'#10284c');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
- stars.forEach(s=>{ctx.globalAlpha=s.a;ctx.fillStyle='#d7f4ff';ctx.beginPath();ctx.arc(s.x*w,s.y*h,s.r,0,Math.PI*2);ctx.fill()});ctx.globalAlpha=1;
- const cy=h*.52, sunX=w*.15, earthX=w*.64, R=Math.min(h*.29,w*.19);
- // sunlight beams
- ctx.save();ctx.globalAlpha=.12;ctx.fillStyle='#ffd66d';ctx.beginPath();ctx.moveTo(sunX+R*.55,cy-R*.85);ctx.lineTo(earthX-R*.9,cy-R*1.15);ctx.lineTo(earthX-R*.9,cy+R*1.15);ctx.lineTo(sunX+R*.55,cy+R*.85);ctx.closePath();ctx.fill();ctx.restore();
- // sun
- const glow=ctx.createRadialGradient(sunX,cy,8,sunX,cy,R*1.5);glow.addColorStop(0,'#fff9c9');glow.addColorStop(.35,'#ffd45d');glow.addColorStop(1,'rgba(255,151,30,0)');
- ctx.fillStyle=glow;ctx.beginPath();ctx.arc(sunX,cy,R*1.5,0,Math.PI*2);ctx.fill();
- ctx.fillStyle='#ffd65e';ctx.beginPath();ctx.arc(sunX,cy,R*.52,0,Math.PI*2);ctx.fill();
- ctx.strokeStyle='#ffe8a0';ctx.lineWidth=3;for(let i=0;i<12;i++){let a=i*Math.PI/6;ctx.beginPath();ctx.moveTo(sunX+Math.cos(a)*R*.62,cy+Math.sin(a)*R*.62);ctx.lineTo(sunX+Math.cos(a)*R*.82,cy+Math.sin(a)*R*.82);ctx.stroke()}
- ctx.fillStyle='#fff1ad';ctx.font='bold 22px system-ui';ctx.textAlign='center';ctx.fillText('MATAHARI',sunX,cy+R*1.05);
- // earth base and clip
- ctx.save();ctx.beginPath();ctx.arc(earthX,cy,R,0,Math.PI*2);ctx.clip();
- const ocean=ctx.createLinearGradient(earthX-R,cy-R,earthX+R,cy+R);ocean.addColorStop(0,'#0a4f9c');ocean.addColorStop(.45,'#1b8ed0');ocean.addColorStop(1,'#08245d');ctx.fillStyle=ocean;ctx.fillRect(earthX-R,cy-R,2*R,2*R);
- // stylized continents move horizontally with angle; wrap-like repeating shapes
- const shift=((angle*R*1.8)%(R*2.8))-R*1.4;
- for(let k=-1;k<=1;k++){
-   const ox=earthX+shift+k*R*2.7;
-   ctx.fillStyle='#54c779';ctx.strokeStyle='#a3f1a5';ctx.lineWidth=1.5;
-   // continents
-   ctx.beginPath();ctx.moveTo(ox-R*.48,cy-R*.48);ctx.lineTo(ox-R*.18,cy-R*.62);ctx.lineTo(ox+R*.02,cy-R*.45);ctx.lineTo(ox-R*.04,cy-R*.22);ctx.lineTo(ox-R*.24,cy-R*.12);ctx.lineTo(ox-R*.35,cy+R*.05);ctx.lineTo(ox-R*.5,cy-R*.12);ctx.closePath();ctx.fill();ctx.stroke();
-   ctx.beginPath();ctx.moveTo(ox+R*.12,cy+R*.02);ctx.lineTo(ox+R*.34,cy+R*.11);ctx.lineTo(ox+R*.29,cy+R*.35);ctx.lineTo(ox+R*.15,cy+R*.57);ctx.lineTo(ox+R*.03,cy+R*.32);ctx.closePath();ctx.fill();ctx.stroke();
-   ctx.beginPath();ctx.moveTo(ox+R*.28,cy-R*.52);ctx.lineTo(ox+R*.52,cy-R*.38);ctx.lineTo(ox+R*.44,cy-R*.18);ctx.lineTo(ox+R*.25,cy-R*.24);ctx.closePath();ctx.fill();ctx.stroke();
- }
- // day/night divider: dark hemisphere on right, illuminated left
- const shade=ctx.createLinearGradient(earthX-R*.05,cy,earthX+R,cy);shade.addColorStop(0,'rgba(2,7,26,0)');shade.addColorStop(.38,'rgba(2,7,26,.32)');shade.addColorStop(1,'rgba(1,4,20,.88)');ctx.fillStyle=shade;ctx.fillRect(earthX-R,cy-R,2*R,2*R);
- ctx.restore();
- // atmosphere
- ctx.strokeStyle='#5adfff';ctx.lineWidth=4;ctx.beginPath();ctx.arc(earthX,cy,R,0,Math.PI*2);ctx.stroke();
- // axis vertical through poles, U/S labels
- ctx.save();ctx.setLineDash([9,7]);ctx.strokeStyle='#f5fbff';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(earthX,cy-R-38);ctx.lineTo(earthX,cy+R+38);ctx.stroke();ctx.setLineDash([]);
- ctx.fillStyle='#f4fbff';ctx.font='bold 24px system-ui';ctx.textAlign='center';ctx.fillText('U',earthX,cy-R-48);ctx.fillText('S',earthX,cy+R+62);
- ctx.font='16px system-ui';ctx.fillStyle='#cdeaff';ctx.fillText('PAKSI BUMI',earthX+70,cy-R-15);
- ctx.restore();
- // west-east directional arrow from left to right below earth
- const ay=cy+R+91, ax1=earthX-R*.8, ax2=earthX+R*.8;
- ctx.strokeStyle='#64e7ff';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(ax1,ay);ctx.lineTo(ax2,ay);ctx.stroke();ctx.beginPath();ctx.moveTo(ax2-17,ay-11);ctx.lineTo(ax2,ay);ctx.lineTo(ax2-17,ay+11);ctx.stroke();
- ctx.fillStyle='#72edff';ctx.font='bold 17px system-ui';ctx.textAlign='center';ctx.fillText('BARAT',ax1,ay+28);ctx.fillText('TIMUR',ax2,ay+28);
- ctx.fillStyle='#cdeaff';ctx.font='15px system-ui';ctx.fillText('Arah putaran: BARAT  →  TIMUR',earthX,ay+57);
- // labels day/night
- roundedRect(earthX-R*.83,cy-R*.1,105,34,10,'rgba(4,30,67,.75)');ctx.fillStyle='#fff3ad';ctx.font='bold 17px system-ui';ctx.fillText('SIANG',earthX-R*.45,cy+6);
- roundedRect(earthX+R*.28,cy-R*.1,105,34,10,'rgba(3,8,27,.8)');ctx.fillStyle='#d5e5ff';ctx.fillText('MALAM',earthX+R*.67,cy+6);
- if(running) angle += .0035*Number(speed.value);
- requestAnimationFrame(draw);
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const state={sim:0,quiz:0,obsA:0,obsB:0,obs:0,graded:false};
+const tabs=$$('.tab'),navButtons=$$('#nav button');
+navButtons.forEach(b=>b.addEventListener('click',()=>{navButtons.forEach(x=>x.classList.toggle('active',x===b));tabs.forEach(t=>t.classList.toggle('active',t.id==='tab-'+b.dataset.tab));if(b.dataset.tab==='slip')makeSlip()}));
+function popup(title,text,emoji='🎉'){ $('#popTitle').textContent=title;$('#popText').textContent=text;$('#popEmoji').textContent=emoji;$('#popup').classList.add('show') }
+$('#popClose').onclick=()=>$('#popup').classList.remove('show');
+function setupCanvas(id,kind){const c=$('#'+id),ctx=c.getContext('2d');return {c,ctx,kind,angle:0,running:true,last:0}}
+const spin=setupCanvas('spin','spin'),orbit=setupCanvas('orbit','orbit');
+function starfield(ctx,w,h){for(let i=0;i<80;i++){ctx.fillStyle=`rgba(220,240,255,${.25+(i%5)*.13})`;ctx.beginPath();ctx.arc((i*173)%w,(i*97)%h,1+(i%2),0,Math.PI*2);ctx.fill()}}
+function earth(ctx,x,y,r,angle,shade=true){ctx.save();ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.clip();let g=ctx.createLinearGradient(x-r,y-r,x+r,y+r);g.addColorStop(0,'#53c7e9');g.addColorStop(.5,'#1262bc');g.addColorStop(1,'#062451');ctx.fillStyle=g;ctx.fillRect(x-r,y-r,r*2,r*2);
+for(let k=-1;k<=1;k++){let ox=x+(((angle*r*1.5)%(r*2.8))-r*1.4)+k*r*2.7;ctx.fillStyle='#57bd64';ctx.beginPath();ctx.moveTo(ox-r*.45,y-r*.45);ctx.lineTo(ox-r*.1,y-r*.62);ctx.lineTo(ox+r*.04,y-r*.36);ctx.lineTo(ox-r*.12,y-r*.12);ctx.lineTo(ox-r*.38,y+r*.03);ctx.lineTo(ox-r*.5,y-r*.16);ctx.closePath();ctx.fill();ctx.beginPath();ctx.moveTo(ox+r*.02,y+r*.03);ctx.lineTo(ox+r*.32,y+r*.1);ctx.lineTo(ox+r*.2,y+r*.38);ctx.lineTo(ox+r*.08,y+r*.55);ctx.lineTo(ox-r*.06,y+r*.25);ctx.closePath();ctx.fill()}
+if(shade){let sh=ctx.createLinearGradient(x-r*.1,y,x+r,y);sh.addColorStop(0,'rgba(0,0,10,0)');sh.addColorStop(.4,'rgba(0,0,10,.25)');sh.addColorStop(1,'rgba(0,0,10,.88)');ctx.fillStyle=sh;ctx.fillRect(x-r,y-r,2*r,2*r)}ctx.restore();ctx.strokeStyle='#65e7ff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.stroke()}
+function drawSpin(s){let {ctx,c}=s,w=c.width,h=c.height;ctx.clearRect(0,0,w,h);let bg=ctx.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#07142e');bg.addColorStop(1,'#17395e');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);starfield(ctx,w,h);let x=w*.62,y=h*.48,r=Math.min(h*.29,w*.2),sx=w*.15;
+let glow=ctx.createRadialGradient(sx,y,5,sx,y,r*1.35);glow.addColorStop(0,'#fff9b5');glow.addColorStop(.3,'#ffd12e');glow.addColorStop(1,'rgba(255,170,0,0)');ctx.fillStyle=glow;ctx.beginPath();ctx.arc(sx,y,r*1.35,0,7);ctx.fill();ctx.fillStyle='#ffc400';ctx.beginPath();ctx.arc(sx,y,r*.55,0,7);ctx.fill();ctx.fillStyle='#fff2b2';ctx.font='bold 24px system-ui';ctx.textAlign='center';ctx.fillText('MATAHARI',sx,y+r*.9);
+earth(ctx,x,y,r,s.angle,true);
+ctx.setLineDash([8,7]);ctx.strokeStyle='#f6fbff';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x,y-r-35);ctx.lineTo(x,y+r+35);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='white';ctx.font='bold 23px system-ui';ctx.fillText('U',x,y-r-42);ctx.fillText('S',x,y+r+59);ctx.font='bold 16px system-ui';ctx.fillText('PAKSI BUMI',x+70,y-r-12);
+ctx.strokeStyle='#60e6ff';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-r*.8,y+r+85);ctx.lineTo(x+r*.8,y+r+85);ctx.stroke();ctx.beginPath();ctx.moveTo(x+r*.8-16,y+r+74);ctx.lineTo(x+r*.8,y+r+85);ctx.lineTo(x+r*.8-16,y+r+96);ctx.stroke();ctx.fillStyle='#73efff';ctx.font='bold 18px system-ui';ctx.fillText('BARAT',x-r*.8,y+r+112);ctx.fillText('TIMUR',x+r*.8,y+r+112);ctx.fillStyle='#ffe7a0';ctx.font='bold 17px system-ui';ctx.fillText('SIANG',x-r*.45,y+8);ctx.fillStyle='#dceaff';ctx.fillText('MALAM',x+r*.55,y+8);
 }
-toggle.addEventListener('click',()=>{running=!running;toggle.textContent=running?'❚❚ Jeda':'▶ Sambung'});
-reset.addEventListener('click',()=>{angle=0;running=true;toggle.textContent='❚❚ Jeda'});
-speed.addEventListener('input',()=>speedVal.textContent=speed.value+'×');
-document.querySelectorAll('.answers button').forEach(b=>b.addEventListener('click',()=>{
- document.querySelectorAll('.answers button').forEach(x=>x.classList.remove('correct','wrong'));
- b.classList.add(b.dataset.answer);
- document.getElementById('feedback').textContent=b.dataset.answer==='correct'?'Betul! Bumi berputar dari barat ke timur.':'Belum tepat. Cuba lagi: Bumi berputar dari barat ke timur.';
-}));
-requestAnimationFrame(draw);
+function drawOrbit(s){let {ctx,c}=s,w=c.width,h=c.height;ctx.clearRect(0,0,w,h);ctx.fillStyle='#08152f';ctx.fillRect(0,0,w,h);starfield(ctx,w,h);let cx=w*.5,cy=h*.5,rx=w*.37,ry=h*.36;ctx.strokeStyle='#8b9db1';ctx.lineWidth=4;ctx.beginPath();ctx.ellipse(cx,cy,rx,ry,0,0,Math.PI*2);ctx.stroke();for(let a=.4;a<Math.PI*2;a+=Math.PI/2){let x=cx+rx*Math.cos(a),y=cy+ry*Math.sin(a);let dx=-Math.sin(a),dy=Math.cos(a);ctx.fillStyle='#aab8c8';ctx.beginPath();ctx.moveTo(x+dx*12,y+dy*12);ctx.lineTo(x-dx*10+Math.cos(a)*13,y-dy*10+Math.sin(a)*13);ctx.lineTo(x-dx*10-Math.cos(a)*13,y-dy*10-Math.sin(a)*13);ctx.closePath();ctx.fill()}
+let sunR=Math.min(h*.15,75),gl=ctx.createRadialGradient(cx,cy,5,cx,cy,sunR*2);gl.addColorStop(0,'#fff8b0');gl.addColorStop(.45,'#ffc51b');gl.addColorStop(1,'rgba(255,177,0,0)');ctx.fillStyle=gl;ctx.beginPath();ctx.arc(cx,cy,sunR*2,0,7);ctx.fill();ctx.fillStyle='#ffc400';ctx.beginPath();ctx.arc(cx,cy,sunR,0,7);ctx.fill();ctx.fillStyle='#151b2a';ctx.font='bold 22px system-ui';ctx.textAlign='center';ctx.fillText('MATAHARI',cx,cy+8);
+let a=s.angle,x=cx+rx*Math.cos(a),y=cy+ry*Math.sin(a),r=43;earth(ctx,x,y,r,a,false);ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,y-r-14);ctx.lineTo(x,y+r+14);ctx.stroke();ctx.fillStyle='#fff';ctx.font='bold 16px system-ui';ctx.fillText('U',x,y-r-20);ctx.fillText('S',x,y+r+30);ctx.fillStyle='#67e7ff';ctx.font='bold 18px system-ui';ctx.fillText('BUMI',x,y+r+54);ctx.fillStyle='#d8e9ff';ctx.font='bold 18px system-ui';ctx.fillText('ORBIT BUMI',cx,35)}
+function animate(t){[spin,orbit].forEach(s=>{if(s.kind==='spin')drawSpin(s);else drawOrbit(s);if(s.running)s.angle+=.006*Number($('#'+s.kind+'Speed').value)});requestAnimationFrame(animate)}requestAnimationFrame(animate);
+[['spin','spinToggle','spinReset','spinSpeed','spinSpeedText'],['orbit','orbitToggle','orbitReset','orbitSpeed','orbitSpeedText']].forEach(([k,t,r,sp,txt])=>{$('#'+t).onclick=()=>{let s=k==='spin'?spin:orbit;s.running=!s.running;$('#'+t).textContent=s.running?'❚❚ Jeda':'▶ Sambung'};$('#'+r).onclick=()=>{let s=k==='spin'?spin:orbit;s.angle=0;s.running=true;$('#'+t).textContent='❚❚ Jeda'};$('#'+sp).oninput=e=>$('#'+txt).textContent=e.target.value+'×'});
+const simAnswers={s1:'b',s2:'a',s3:'b'};
+$('#completeSim').onclick=()=>{let right=Object.entries(simAnswers).filter(([n,v])=>{let el=$(`input[name="${n}"]:checked`);return el&&el.value===v}).length;let tried=$('#seenSpin').checked&&$('#seenOrbit').checked;state.sim=tried?right*3:0;$('#simResult').textContent=`Markah simulator: ${state.sim}/9${tried?'':' — cuba kedua-dua simulator untuk melayakkan markah'}`;updateSlip();popup('Simulator disemak',`Markah anda ialah ${state.sim}/9. ${tried?'Teruskan ke kuiz dan pemerhatian.':'Tandakan kedua-dua simulator selepas mencubanya.'}`,state.sim===9?'🏆':'🌍')};
+const quizData=[
+['Apakah yang dimaksudkan dengan putaran Bumi?',['Bumi berputar pada paksinya','Bumi mengelilingi Bulan','Bulan berputar mengelilingi Bumi','Matahari mengelilingi Bumi'],0],
+['Apakah arah putaran Bumi pada paksinya?',['Timur ke barat','Barat ke timur','Utara ke selatan','Selatan ke utara'],1],
+['Berapakah tempoh satu putaran Bumi?',['12 jam','30 hari','Kira-kira 24 jam','365 hari'],2],
+['Apakah kesan putaran Bumi?',['Empat musim','Siang dan malam','Gerhana setiap hari','Bulan menjadi terang'],1],
+['Bahagian Bumi yang menerima cahaya Matahari mengalami…',['malam','siang','musim sejuk','gerhana Bulan'],1],
+['Apakah yang menjadi paksi Bumi dalam model?',['Garis bayangan melalui kutub','Orbit Bulan','Cahaya Matahari','Garis khatulistiwa sahaja'],0],
+['Di manakah Matahari berada dalam sistem suria?',['Mengelilingi Bumi','Di pusat sistem suria','Di dalam Bumi','Mengelilingi Bulan'],1],
+['Apakah peredaran Bumi?',['Bumi berputar pada paksi','Bumi bergerak mengelilingi Matahari','Bulan mengelilingi Matahari sahaja','Matahari mengelilingi Bumi'],1],
+['Berapakah tempoh satu peredaran Bumi mengelilingi Matahari?',['24 jam','7 hari','Kira-kira 365¼ hari','30 hari'],2],
+['Laluan Bumi mengelilingi Matahari disebut…',['paksi','khatulistiwa','orbit','kutub'],2],
+['Apakah objek yang dikelilingi Bumi dalam peredaran tahunan?',['Matahari','Marikh','Bulan','Awan'],0],
+['Apakah perbezaan putaran dan peredaran?',['Kedua-duanya sama','Putaran pada paksi; peredaran mengelilingi Matahari','Putaran mengelilingi Matahari; peredaran pada paksi','Kedua-duanya menyebabkan gerhana setiap hari'],1],
+['Apakah yang menyebabkan kawasan di Bumi bergilir siang dan malam?',['Awan bergerak','Putaran Bumi','Orbit Bulan','Peredaran Matahari mengelilingi Bumi'],1],
+['Apakah sumber cahaya utama yang menerangi Bumi?',['Bulan','Bintang Utara sahaja','Matahari','Lampu jalan'],2],
+['Jika sesuatu kawasan membelakangi Matahari, kawasan itu mengalami…',['siang','malam','tengah hari','musim panas'],1],
+['Apakah nama kutub di bahagian atas paksi dalam rajah biasa?',['Kutub Selatan','Kutub Utara','Khatulistiwa','Orbit'],1],
+['Bumi mempunyai bentuk yang hampir…',['kubus','rata','sfera','segi tiga'],2],
+['Apakah yang kekal menjadi laluan peredaran Bumi?',['Orbit','Paksi','Bayang-bayang','Awan'],0],
+['Mengapakah Matahari kelihatan bergerak merentasi langit setiap hari?',['Bumi berputar','Matahari mengelilingi Bumi setiap hari','Bulan menolak Matahari','Bumi berhenti berputar'],0],
+['Apakah unit masa yang hampir sama dengan satu putaran Bumi?',['Satu hari','Satu bulan','Satu tahun','Satu dekad'],0],
+['Pernyataan manakah betul?',['Bumi tidak bergerak','Bumi berputar dan beredar','Bumi hanya beredar','Matahari mengelilingi Bumi'],1]
+];
+function renderMCQ(container,data,prefix){$(container).innerHTML=data.map((q,i)=>`<div class="qrow"><div class="qtitle">${i+1}. ${q[0]}</div><div class="opts">${q[1].map((o,j)=>`<label><input type="radio" name="${prefix}${i}" value="${j}"> <span><b>${'ABCD'[j]}.</b> ${o}</span></label>`).join('')}</div></div>`).join('')}
+renderMCQ('#quizQuestions',quizData,'q');
+$('#quizForm').onsubmit=e=>{e.preventDefault();let score=0,answered=0;quizData.forEach((q,i)=>{let a=$(`input[name="q${i}"]:checked`);if(a){answered++;if(+a.value===q[2])score++}});state.quiz=score;$('#quizResult').innerHTML=`Markah kuiz: <b>${score}/21</b> — ${answered}/21 soalan dijawab.`;updateSlip();popup('Kuiz selesai',`Anda memperoleh ${score}/21 markah.`,score===21?'🏆':'📝')};
+$('#clearQuiz').onclick=()=>{$$('#quizForm input').forEach(x=>x.checked=false);$('#quizResult').textContent='';state.quiz=0;updateSlip()};
+const obsData=[
+['Bumi berputar pada…',['paksinya','orbit Bulan','paksi Matahari','awan'],0],
+['Arah putaran Bumi ialah…',['timur ke barat','barat ke timur','utara ke selatan','selatan ke utara'],1],
+['Satu putaran Bumi mengambil masa…',['24 jam','30 hari','365 hari','12 bulan'],0],
+['Bumi beredar mengelilingi…',['Bulan','Marikh','Matahari','awan'],2],
+['Satu peredaran Bumi mengambil masa kira-kira…',['24 jam','7 hari','365¼ hari','30 hari'],2]
+];
+renderMCQ('#obsQuestions',obsData,'o');
+const written=[
+{q:'Nyatakan maksud putaran Bumi.',keys:['putar','paksi'],sample:'Bumi berputar pada paksinya.'},
+{q:'Terangkan bagaimana siang dan malam berlaku.',keys:['putar','matahari'],sample:'Putaran Bumi menyebabkan bahagian yang menghadap Matahari mengalami siang dan bahagian yang membelakangi Matahari mengalami malam.'},
+{q:'Nyatakan maksud peredaran Bumi dan tempohnya.',keys:['edar','matahari','365'],sample:'Bumi beredar mengelilingi Matahari dalam kira-kira 365¼ hari.'}
+];
+$('#writtenQuestions').innerHTML=written.map((q,i)=>`<div class="qrow"><div class="qtitle">${i+1}. ${q.q} (5 markah)</div><textarea class="textanswer" id="w${i}" placeholder="Taip jawapan anda..."></textarea><div class="small">Contoh jawapan untuk rujukan guru: ${q.sample}</div></div>`).join('');
+$('#obsForm').onsubmit=e=>{e.preventDefault();let a=0;obsData.forEach((q,i)=>{let el=$(`input[name="o${i}"]:checked`);if(el&&+el.value===q[2])a++});let b=0;written.forEach((q,i)=>{let ans=$('#w'+i).value.toLowerCase();let hits=q.keys.filter(k=>ans.includes(k)).length;b+=Math.round(5*hits/q.keys.length)});state.obsA=a;state.obsB=Math.min(15,b);state.obs=a+state.obsB;$('#obsResult').innerHTML=`Markah pemerhatian: <b>${state.obs}/20</b> (Objektif ${a}/5 + Bertulis ${state.obsB}/15). Semakan kata kunci ialah anggaran; guru boleh melaraskan markah bertulis.`;updateSlip();popup('Pemerhatian disemak',`Markah pemerhatian: ${state.obs}/20. Jawapan bertulis dinilai berdasarkan kata kunci asas.`,state.obs===20?'🏅':'🔎')};
+$('#clearObs').onclick=()=>{$$('#obsForm input').forEach(x=>x.checked=false);written.forEach((q,i)=>$('#w'+i).value='');$('#obsResult').textContent='';state.obs=state.obsA=state.obsB=0;updateSlip()};
+function gradeFor(p){if(p<=19)return ['F','CUBA LAGI','Teruskan berlatih. Ulang kaji konsep putaran dan peredaran Bumi, kemudian cuba sekali lagi.'];if(p<=34)return ['E','TINGKATKAN USAHA','Usaha anda telah bermula. Baca semula nota dan jawab soalan dengan lebih teliti.'];if(p<=49)return ['D','TERUS BERUSAHA','Teruskan usaha. Kukuhkan pemahaman tentang paksi, orbit, siang dan malam.'];if(p<=65)return ['C','TINGKATKAN PRESTASI','Pencapaian memuaskan. Buat latihan tambahan untuk meningkatkan ketepatan jawapan.'];if(p<=81)return ['B','PRESTASI BAIK','Syabas! Anda memahami kebanyakan konsep. Teruskan latihan untuk mencapai tahap cemerlang.'];return ['A','CEMERLANG','Tahniah! Anda menunjukkan penguasaan yang cemerlang tentang putaran dan peredaran Bumi.'];}
+function updateSlip(){state.total=state.sim+state.quiz+state.obs;state.percent=Math.round(state.total/50*100);state.grade=gradeFor(state.percent)}
+function makeSlip(){updateSlip();let name=$('#studentName').value.trim()||'—';let klass=$('#studentClass').value.trim()||'—';let g=state.grade;$('#slipContent').innerHTML=`<div style="font-size:2rem">🌍 🏅</div><h2>SLIP PENCAPAIAN PEMBELAJARAN</h2><p><b>Sains Tahun 4: Bumi</b></p><p>Nama murid: <b>${escapeHTML(name)}</b><br>Kelas: <b>${escapeHTML(klass)}</b></p><div class="score">${state.total}/50 markah</div><div class="grade">${g[0]}</div><h3>${g[1]}</h3><p>${g[2]}</p><hr><p>Simulator: ${state.sim}/9 &nbsp; | &nbsp; Kuiz: ${state.quiz}/21 &nbsp; | &nbsp; Pemerhatian: ${state.obs}/20</p><p>Pengiraan: (${state.total}/50) × 100 = <b>${state.percent}%</b></p><p class="small">Ulasan guru: ${g[2]}</p><p class="small">Sains Tahun 4 • Bumi</p>`;if(state.percent===100)popup('TAHNIAH! CEMERLANG!','Anda memperoleh 50/50 markah bersamaan 100%. Teruskan sikap ingin tahu dan usaha yang hebat!','🏆')}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('#makeSlip').onclick=makeSlip;$('#printSlip').onclick=()=>{makeSlip();window.print()};
+updateSlip();
 </script>
-</body>
-</html>
+</body></html>

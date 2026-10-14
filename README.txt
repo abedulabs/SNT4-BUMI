@@ -1,19 +1,15 @@
-SAINS TAHUN 4 — BUMI: PUTARAN PADA PAKSI
-================================================
+SAINS TAHUN 4 — BUMI (SIMULATOR INTERAKTIF)
 
-Kandungan ZIP:
-- index.html : pembelajaran interaktif dan simulasi Bumi/Matahari (semua grafik dilukis terus dalam fail ini)
-- README.txt : arahan ringkas
+Fail:
+- index.html (semua kod, grafik, simulasi, kuiz dan slip dalam satu fail)
+- README.txt
 
-Tiada folder aset berasingan. Muat naik index.html ke root repository GitHub (branch main), kemudian aktifkan GitHub Pages daripada main / root.
+Pemarkahan keseluruhan 50 markah:
+- Simulator interaktif: 9 markah
+- Kuiz objektif: 21 markah
+- Pemerhatian: 20 markah (5 objektif + 15 bertulis)
 
-Ciri:
-- Simulasi Bumi dari pandangan sisi
-- Matahari di sebelah kiri
-- Paksi menegak dengan label U (Utara) dan S (Selatan)
-- Arah putaran ditunjukkan Barat → Timur (kiri ke kanan)
-- Kawasan siang dan malam
-- Kawalan jeda, sambung, reset dan kelajuan
-- Kuiz ringkas dengan maklum balas
+Peratus = jumlah markah / 50 x 100.
+Skala: 0–19 F CUBA LAGI; 20–34 E TINGKATKAN USAHA; 35–49 D TERUS BERUSAHA; 50–65 C TINGKATKAN PRESTASI; 66–81 B PRESTASI BAIK; 82–100 A CEMERLANG.
 
-Nota sains: Animasi ini ialah model pendidikan ringkas, bukan simulasi astronomi berskala sebenar.
+Muat naik index.html dan README.txt ke root repository GitHub Pages. Pastikan branch/folder Pages betul. Jawapan bertulis dinilai automatik menggunakan kata kunci asas dan wajar disemak guru.
