@@ -13,3 +13,5 @@ Peratus = jumlah markah / 50 x 100.
 Skala: 0–19 F CUBA LAGI; 20–34 E TINGKATKAN USAHA; 35–49 D TERUS BERUSAHA; 50–65 C TINGKATKAN PRESTASI; 66–81 B PRESTASI BAIK; 82–100 A CEMERLANG.
 
 Muat naik index.html dan README.txt ke root repository GitHub Pages. Pastikan branch/folder Pages betul. Jawapan bertulis dinilai automatik menggunakan kata kunci asas dan wajar disemak guru.
+
+Kemaskini: Paksi Bumi dalam kedua-dua simulator ditunjukkan condong 23.5 darjah, dengan label U dan S pada hujung paksi.
