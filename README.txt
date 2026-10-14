@@ -9,3 +9,5 @@ Kemaskini: paksi Bumi dipantulkan ke kiri dalam kedua-dua simulator. Simulator o
 Kemaskini responsif: viewport-fit=cover untuk iPhone/iPad, header tidak lagi bertindih dengan kandungan semasa reload/scroll, tab boleh digelongsor secara mendatar pada telefon, susun atur satu lajur pada telefon/tablet, saiz sentuhan dan teks dipertingkat, serta sokongan dynamic viewport dan safe area.
 
 Tambahan navigasi automatik: selepas murid menyimpan markah Simulator, menekan Teruskan pada popup akan membawa ke Kuiz; selepas Semak Kuiz ke Pemerhatian; selepas Semak Pemerhatian ke Slip Pencapaian. Murid masih boleh memilih tab secara manual.
+
+Kemaskini CSS header: tajuk dan header dipadatkan secara responsif mengikut lebar/tinggi skrin, ruang safe-area telefon diambil kira, dan navigasi dipastikan berada di bawah header tanpa bertindih atau menutup tajuk.
